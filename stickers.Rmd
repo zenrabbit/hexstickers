@@ -60,6 +60,10 @@ font_add_google("Gochi Hand", "gochi")
 
 sticker(imgurl, package="ecodata", p_size=8, p_color = "#000000", p_family = "gochi", s_x=1, s_y=.75, s_width=.6,h_fill="#FFFFFF", h_color="#000000", filename="ecodata.3.png")
 
+
+imgurl <- "https://figshare.com/ndownloader/files/38962781"
+sticker(imgurl, package="ecodata", p_size=8, p_color = "#000000", p_family = "gochi", s_x=1, s_y=.75, s_width=.5, s_height=0.5, h_fill="#FFFFFF", h_color="#000000", filename="ecodata.4.png")
+
 ```
 
 
