@@ -1,0 +1,35 @@
+---
+title: ""
+output: html_document
+date: "2023-01-26"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## stickers  
+```{r}
+library(hexSticker)
+library(tidyverse)
+
+df <- read_csv("data/data.csv")
+
+#p <- ggplot(df, aes(x,y)) +
+#  geom_smooth(method = lm, formula = y ~ splines::bs(x, 3), se = FALSE, #color = "white") +
+# theme_void() +
+#  theme_transparent() +
+#  labs(x = "open", y = "science")
+
+p <- ggplot(df, aes(x,y)) +
+  stat_smooth(method = "lm", formula = y ~ x + I(x^2), color = "white", size = 1, se = FALSE) + 
+  theme_void() +
+  theme_transparent() +
+  labs(x = "open", y = "science")
+p
+
+sticker(p, package="open_science", p_size=6, s_x=1, s_y=.75, s_width=1, s_height=1, filename="ggplot3.png")
+
+
+```
+
