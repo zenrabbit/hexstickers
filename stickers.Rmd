@@ -23,15 +23,25 @@ df <- read_csv("data/data.csv")
 #  theme_transparent() +
 #  labs(x = "open", y = "science")
 
+#p <- ggplot(df, aes(x,y)) +
+#  stat_smooth(method = "lm", formula = y ~ x + I(x^2), color = "white", size = 1, se = FALSE) #+    theme_void() +
+#  theme_transparent() +
+#  theme(panel.border = element_rect(colour = "white", fill=NA, size=1)) +
+#  labs(x = "open", y = "science")
+
+#sticker(p, package="eco_evo", p_size=6, s_x=1, s_y=.75, s_width=0.75, s_height=0.75, #filename="os.png")
+  
+  
 p <- ggplot(df, aes(x,y)) +
-  stat_smooth(method = "lm", formula = y ~ x + I(x^2), color = "white", size = 1, se = FALSE) + 
-  theme_void() +
+  stat_smooth(method = "lm", formula = y ~ x + I(x^2), color = "black", size = 1, se = FALSE) +
+ theme_classic() +
   theme_transparent() +
-  theme(panel.border = element_rect(colour = "white", fill=NA, size=1))
+  theme(axis.text.x = element_blank(), axis.text.y = element_blank(), axis.ticks = element_blank(), axis.title.x = element_text(size = 8), axis.title.y = element_text(size = 8)) +
+  theme(panel.border = element_rect(colour = "black", fill=NA, size=1)) +
   labs(x = "open", y = "science")
 p
 
-sticker(p, package="open_science", p_size=6, s_x=1, s_y=.75, s_width=0.75, s_height=0.75, filename="os.png")
+sticker(p, package="eco_evo", p_size=6, p_color = "#000000", s_x=.91, s_y=.75, s_width=1, s_height=1, filename="ece_os.png")  
 
 #ecodata
 df <- read_csv("data/ecodata.csv")
@@ -61,8 +71,8 @@ font_add_google("Gochi Hand", "gochi")
 sticker(imgurl, package="ecodata", p_size=8, p_color = "#000000", p_family = "gochi", s_x=1, s_y=.75, s_width=.6,h_fill="#FFFFFF", h_color="#000000", filename="ecodata.3.png")
 
 
-#imgurl <- "https://figshare.com/ndownloader/files/38964698"
-#sticker(imgurl, package="", p_size=8, p_color = "#000000", p_family = "gochi", s_x=1, s_y=1, #s_width=.5, s_height=0.5, h_fill="#FFFFFF", h_color="#000000", filename="ecodata.5.png")
+imgurl <- "https://figshare.com/ndownloader/files/38965427"
+sticker(imgurl, package="", p_size=8, p_color = "#000000", p_family = "gochi", s_x=1, s_y=1, s_width= 0.65, s_height= 0.65, h_fill="#FFFFFF", h_color="#000000", filename="ecodata.5.png")
 
 
 
